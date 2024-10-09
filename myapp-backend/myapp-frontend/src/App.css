@@ -1,8 +1,13 @@
 body {
-  background-color: antiquewhite;
+  background-color: blue;
 }
+
 #root {
-  background-color: pink;
+  background-color: blanchedalmond;
+}
+
+.card button {
+  color: black;
 }
 .card button {
   color: blue;

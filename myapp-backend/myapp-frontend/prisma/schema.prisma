@@ -4,26 +4,122 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-  datasource db {
-         provider = "postgresql"
-         url      = env("DATABASE_URL")
-       }
+// This is your Prisma schema file
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
-       generator client {
-         provider = "prisma-client-js"
-       }
+generator client {
+  provider = "prisma-client-js"
+}
 
-       model User {
-         id        Int      @id @default(autoincrement())
-         email     String   @unique
-         name      String
-         posts     Post[]
-       }
+model User {
+  id             Int       @id @default(autoincrement())
+  email          String    @unique
+  username       String    @unique
+  password       String
+  isAdmin        Boolean   @default(false)
+  // weightGoal     Float?
+  // currentWeight  Float?
+  bio            String?
+  coachMessage   String?
+  profilePicture String?
+  // facebookLink   String?
+  // instagramLink  String?
+  // youtubeLink    String?
+  cart           Cart?
+  orders         Order[]
+  userWorkouts   UserWorkout[]
+  posts          CommunityPost[]
+  messagesSent   Message[] @relation("SentMessages")
+  messagesReceived Message[] @relation("ReceivedMessages")
+  createdAt      DateTime  @default(now())
+}
 
-       model Post {
-         id        Int      @id @default(autoincrement())
-         title     String
-         content   String
-         authorId  Int
-         author    User     @relation(fields: [authorId], references: [id])
-       }
+model Product {
+  id           Int      @id @default(autoincrement())
+  name         String
+  description  String
+  price        Float
+  stockCount   Int      @default(0)
+  discontinued Boolean  @default(false)
+  productType  String   // can be "poppers", "ebook", "workout_package", etc.
+  eBookLink    String?
+  cartItems    CartItem[]
+  // createdAt    DateTime @default(now())
+}
+
+model Cart {
+  id         Int       @id @default(autoincrement())
+  userId     Int       @unique
+  user       User      @relation(fields: [userId], references: [id])
+  cartItems  CartItem[]
+  createdAt  DateTime  @default(now())
+}
+
+model CartItem {
+  id         Int       @id @default(autoincrement())
+  cartId     Int
+  cart       Cart      @relation(fields: [cartId], references: [id])
+  productId  Int
+  product    Product   @relation(fields: [productId], references: [id])
+  quantity   Int       @default(1)
+  priceAtTime Float
+}
+
+model Order {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  user       User      @relation(fields: [userId], references: [id])
+  totalItems Int
+  totalPrice Float
+  status     String    @default("pending")  // can be 'pending', 'completed', etc.
+  createdAt  DateTime  @default(now())
+}
+
+model Workout {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  difficulty  String    // beginner, intermediate, advanced
+  workoutPlan Json      // Store plan in JSON format
+  videoLink   String
+  userWorkouts UserWorkout[]
+}
+
+model UserWorkout {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  user       User      @relation(fields: [userId], references: [id])
+  workoutId  Int
+  workout    Workout   @relation(fields: [workoutId], references: [id])
+  // progress   Int       @default(0)
+  signedUpAt DateTime  @default(now())
+}
+
+model CommunityPost {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  user      User      @relation(fields: [userId], references: [id])
+  content   String
+  createdAt DateTime  @default(now())
+}
+
+model Message {
+  id          Int      @id @default(autoincrement())
+  fromUserId  Int
+  toUserId    Int
+  fromUser    User     @relation("SentMessages", fields: [fromUserId], references: [id])
+  toUser      User     @relation("ReceivedMessages", fields: [toUserId], references: [id])
+  content     String
+  sentAt      DateTime @default(now())
+}
+
+model ContactForm {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String
+  message     String
+  submittedAt DateTime @default(now())
+}
