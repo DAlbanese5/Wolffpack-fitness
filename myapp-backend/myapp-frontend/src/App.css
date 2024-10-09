@@ -1,11 +1,80 @@
 body {
-    background-color: blue;
+  background-image: url("./components/pics/logo.jpg");
+  background-size: 40%; /* Ensures the image covers the whole screen */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Keeps the background fixed in place when scrolling */
 }
 
-#root {
-    background-color: blanchedalmond;
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
-.card button {
-    color: black;
+.navbar button {
+  transform: translateY(-10%);
+  background-color: #f15025;
+  box-shadow: 2px 2px 3px black;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  margin: 40px 0;
+  border-radius: 0 20px 20px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+  text-align: left;
+}
+
+.navbar button:hover {
+  background-color: #d9431e;
+  transform: scale(1.02);
+}
+
+.navbar button:focus {
+  outline: none;
+}
+
+.navbar button:active {
+  background-color: #b13315;
+  transform: scale(0.98);
+}
+
+/* Styling for the Cart button */
+.cart-button {
+  box-shadow: 2px 2px 3px black;
+  position: fixed;
+  right: 0;
+  top: 5%; /* Adjusts the vertical position to be in the middle of the screen */
+  transform: translateY(-10%);
+  background-color: #f15025;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+.cart-button:hover {
+  background-color: #d9431e;
+  transform: scale(1.02);
+}
+
+.cart-button:focus {
+  outline: none;
+}
+
+.cart-button:active {
+  background-color: #b13315;
+  transform: scale(0.98);
 }
