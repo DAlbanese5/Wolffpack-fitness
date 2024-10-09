@@ -4,6 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
+const cors = require("cors");
+app.use(cors());
 
 app.post("/user", async (req, res) => {
   const { name, email } = req.body;
