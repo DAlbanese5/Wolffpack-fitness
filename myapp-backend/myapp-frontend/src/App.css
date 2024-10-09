@@ -1,1 +1,11 @@
+body {
+    background-color: blue;
+}
 
+#root {
+    background-color: blanchedalmond;
+}
+
+.card button {
+    color: black;
+}
