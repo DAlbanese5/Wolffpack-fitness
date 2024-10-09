@@ -28,3 +28,15 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+app.post('/user', async (req, res) => {
+  const { name, email } = req.body;
+  const user = await prisma.user.create({
+    data: {
+      name,
+      email,
+    },
+  });
+  res.json(user);
+});
