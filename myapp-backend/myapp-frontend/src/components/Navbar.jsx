@@ -12,7 +12,7 @@ const Navbar = () => {
           <button>Workouts</button>
         </Link> */}
         <Link to="/about">
-          <button>About Me</button>
+          <button>Meet Coach</button>
         </Link>
         {/* <Link to="/contact">
           <button>Contact</button>
