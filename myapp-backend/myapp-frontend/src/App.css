@@ -86,3 +86,40 @@ body {
     background-color: rgba(128, 128, 128, 0.431);
 }
 
+/*Workout page styling*/
+.workoutcontainer {
+    flex: auto;
+    flex-wrap: wrap;
+    text-align:center;
+}
+
+#glutepic {
+    width: 300px;
+    height: 300px;
+    flex: auto;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+#ebook2pic {
+    width: 300px;
+    height: 300px;
+    flex: auto;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.eBook1 {
+    background-color: #d9431e;
+    border: 3px solid black;
+}
+
+.eBook2 {
+    background-color: #d9431e;
+    border: 3px solid black;
+}
+
+.ebooktitles {
+    background-color: aquamarine;
+    border: 3px solid black;
+}
