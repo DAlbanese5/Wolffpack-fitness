@@ -1,11 +1,8 @@
-
 .homelogo {
   width: 60%;
-  display: block;  
-  margin: 0 auto;  
+  display: block;
+  margin: 0 auto;
   margin-top: -13%;
-
-
 }
 
 .navbar {
@@ -83,122 +80,232 @@
 
 /*About me page styling*/
 .AboutCoachContainer {
-    text-align: center;
-    border: 3px solid black;
-    background-color: rgba(128, 128, 128, 0.431);
+  text-align: center;
+  border: 3px solid black;
+  background-color: rgba(128, 128, 128, 0.431);
 }
 
 /*Workout page styling*/
 .workoutcontainer {
-    flex: auto;
-    flex-wrap: wrap;
-    text-align:center;
+  flex: auto;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 #glutepic {
-    width: 300px;
-    height: 300px;
-    flex: auto;
-    flex-wrap: wrap;
-    align-self: center;
+  width: 300px;
+  height: 300px;
+  flex: auto;
+  flex-wrap: wrap;
+  align-self: center;
 }
 
 #ebook2pic {
-    width: 300px;
-    height: 300px;
-    flex: auto;
-    flex-wrap: wrap;
-    align-self: center;
+  width: 300px;
+  height: 300px;
+  flex: auto;
+  flex-wrap: wrap;
+  align-self: center;
 }
 
 .eBook1 {
-    background-color: #d9431e;
-    border: 3px solid black;
+  background-color: #d9431e;
+  border: 3px solid black;
 }
 
 .eBook2 {
-    background-color: #d9431e;
-    border: 3px solid black;
+  background-color: #d9431e;
+  border: 3px solid black;
 }
 
 .ebooktitles {
-    background-color: aquamarine;
-    border: 3px solid black;
+  background-color: aquamarine;
+  border: 3px solid black;
 }
 
-
 .Login-button {
-    box-shadow: 2px 2px 3px black;
-    position: fixed;
-    right: 0;
-    top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
-    transform: translateY(-10%);
-    background-color: #f15025;
-    color: #ffffff;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+  box-shadow: 2px 2px 3px black;
+  position: fixed;
+  right: 0;
+  top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+  transform: translateY(-10%);
+  background-color: #f15025;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
 }
 
 .Submit-button {
-    box-shadow: 2px 2px 3px black;
-    position: fixed;
-    flex: auto;
-    flex-wrap: wrap;
-    top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
-    transform: translateY(-10%);
-    background-color: #f15025;
-    color: #ffffff;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+  box-shadow: 2px 2px 3px black;
+  position: fixed;
+  flex: auto;
+  flex-wrap: wrap;
+  top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+  transform: translateY(-10%);
+  background-color: #f15025;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
 }
 
 .login {
-    flex: auto;
-    flex-direction: column;
-    text-align: center;
+  flex: auto;
+  flex-direction: column;
+  text-align: center;
 }
 
 .submit-button {
-    box-shadow: 2px 2px 3px black;
-    position: fixed;
-    flex: auto;
-    flex-wrap: wrap;
-    top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
-    transform: translateY(-10%);
-    background-color: #f15025;
-    color: #ffffff;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 20px ; /*Rounded corners on the right side;*/
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease-in-out; 
+  box-shadow: 2px 2px 3px black;
+  position: fixed;
+  flex: auto;
+  flex-wrap: wrap;
+  top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+  transform: translateY(-10%);
+  background-color: #f15025;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 20px; /*Rounded corners on the right side;*/
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
 }
 
 /*Register Page info*/
 
 .register-form {
-    color: aqua;
+  color: aqua;
 }
 
+.product-page-container {
+  width: 80%;
+  margin: auto;
+}
 
-/* Product page info */
-.product-container {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    height: 100vh; /* Make the container full height of the viewport */
-    text-align: center; /* Center text inside the container */
-  }
+.page-title,
+.cart-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-price {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.add-to-cart-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+}
+
+.cart-container {
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cart-item-info {
+  display: flex;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.cart-item-details {
+  font-size: 14px;
+}
+
+.remove-from-cart-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: #c82333;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}
