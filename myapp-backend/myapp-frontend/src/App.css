@@ -123,3 +123,63 @@ body {
     background-color: aquamarine;
     border: 3px solid black;
 }
+
+
+.Login-button {
+    box-shadow: 2px 2px 3px black;
+    position: fixed;
+    right: 0;
+    top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+    transform: translateY(-10%);
+    background-color: #f15025;
+    color: #ffffff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+.Submit-button {
+    box-shadow: 2px 2px 3px black;
+    position: fixed;
+    flex: auto;
+    flex-wrap: wrap;
+    top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+    transform: translateY(-10%);
+    background-color: #f15025;
+    color: #ffffff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+.login {
+    flex: auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+.submit-button {
+    box-shadow: 2px 2px 3px black;
+    position: fixed;
+    flex: auto;
+    flex-wrap: wrap;
+    top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+    transform: translateY(-10%);
+    background-color: #f15025;
+    color: #ffffff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 20px ; /*Rounded corners on the right side;*/
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out; 
+}
