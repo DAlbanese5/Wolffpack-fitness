@@ -365,3 +365,44 @@
   color: #777;
   margin-top: 30px;
 }
+
+.navbar2 {
+  position: fixed;
+  right: 0; /* Align to the right */
+  top: 0;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start buttons from the top */
+}
+
+.navbar2 button {
+  transform: translateY(-10%);
+  background-color: #f15025;
+  box-shadow: 2px 2px 3px black;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  margin: 40px 0;
+  border-radius: 20px 0 0 20px; /* Rounded corners for the left side */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+  text-align: left;
+}
+
+.navbar2 button:hover {
+  background-color: #d9431e;
+  transform: scale(1.02);
+}
+
+.navbar2 button:focus {
+  outline: none;
+}
+
+.navbar2 button:active {
+  background-color: #b13315;
+  transform: scale(0.98);
+}
