@@ -18,7 +18,7 @@ const Products = () => {
   };
 
   return (
-    <div>
+    <div className="product-container">
       <h2>Products</h2>
       <div>
         <h3>{products.name}</h3>

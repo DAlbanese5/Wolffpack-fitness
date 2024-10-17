@@ -191,3 +191,14 @@
 .register-form {
     color: aqua;
 }
+
+
+/* Product page info */
+.product-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Make the container full height of the viewport */
+    text-align: center; /* Center text inside the container */
+  }
