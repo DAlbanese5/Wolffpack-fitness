@@ -14,12 +14,23 @@ const Navbar = () => {
         <Link to="/workouts">
           <button>Workouts</button>
         </Link>
-        <Link to="/aboutMe">
-          <button>About Me</button>
+        <Link to="/about">
+          <button>Meet Coach</button>
         </Link>
         <Link to="/contact">
           <button>Contact</button>
         </Link>
+        {/* <Link
+          to="/Logout"
+          onClick={handleLogout}
+          style={{ marginLeft: "auto" }}
+        >
+          Logout
+        </Link> */}
+        <Link to="/Login"> 
+        <button>Login</button>
+        </Link>
+       
       </div>
       <button className="cart-button">Cart</button>{" "}
       {/* Cart button on the right */}
