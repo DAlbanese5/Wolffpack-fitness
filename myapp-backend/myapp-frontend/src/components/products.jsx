@@ -35,6 +35,26 @@ const Products = () => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  // Function to increase the quantity of a product in the cart
+  const increaseQuantity = (id) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  // Function to decrease the quantity of a product in the cart
+  const decreaseQuantity = (id) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
   // Calculate the total price
   const totalPrice = cart.reduce(
     (total, item) => total + parseFloat(item.price) * item.quantity,
@@ -77,6 +97,22 @@ const Products = () => {
                     />
                     <div className="cart-item-details">
                       <h4>{item.name}</h4>
+                      <p>${item.price.toFixed(2)}</p>
+                      <div className="quantity-controls">
+                        <button
+                          className="decrease-btn"
+                          onClick={() => decreaseQuantity(item.id)}
+                        >
+                          -
+                        </button>
+                        <span className="quantity">{item.quantity}</span>
+                        <button
+                          className="increase-btn"
+                          onClick={() => increaseQuantity(item.id)}
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <button
