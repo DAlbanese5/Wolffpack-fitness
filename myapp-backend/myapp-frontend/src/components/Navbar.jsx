@@ -20,20 +20,15 @@ const Navbar = () => {
         <Link to="/contact">
           <button>Contact</button>
         </Link>
-        {/* <Link
-          to="/Logout"
-          onClick={handleLogout}
-          style={{ marginLeft: "auto" }}
-        >
-          Logout
-        </Link> */}
-        <Link to="/Login"> 
-        <button>Login</button>
-        </Link>
-       
       </div>
-      <button className="cart-button">Cart</button>{" "}
-      {/* Cart button on the right */}
+      <div className="navbar2">
+        {/* <Link to="/Logout" onClick={handleLogout} style={{ marginLeft: "auto" }}>
+        Logout
+      </Link> */}
+        <Link to="/Login">
+          <button>Login</button>
+        </Link>
+      </div>
     </>
   );
 };
