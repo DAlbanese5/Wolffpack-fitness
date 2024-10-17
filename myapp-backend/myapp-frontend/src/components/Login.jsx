@@ -64,8 +64,7 @@
 // export default Login;
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types"; // Import PropTypes
+import { useNavigate, Link } from "react-router-dom"; // Import Link here
 // import { loginUser } from "../API"; 
 
 const Login = ({ setUser }) => {
@@ -101,7 +100,7 @@ const Login = ({ setUser }) => {
       <br />
       <h2>Login</h2>
       {error && <p>{error}</p>}
-      <form  onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
         <label>
           <input
             type="email"
@@ -122,13 +121,12 @@ const Login = ({ setUser }) => {
           Submit
         </button>
       </form>
+      <p className="register-link">
+        Not a member? <Link to="/register">Register here</Link>
+      </p>
     </div>
   );
 };
 
-// Define prop-types for validation
-Login.propTypes = {
-  setUser: PropTypes.func.isRequired,
-};
-
 export default Login;
+
