@@ -202,3 +202,88 @@
     height: 100vh; /* Make the container full height of the viewport */
     text-align: center; /* Center text inside the container */
   }
+
+  
+
+  /* contact form page */
+
+  .contact-form-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background: #ffffff;
+    position: relative; /* This ensures the ::before and ::after are positioned relative to this container */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-form-container::before,
+  .contact-form-container::after {
+    content: '';
+    background-image: url('/images/wolffpakimg.jpg'); /* Path to your image */
+    background-size: 80px; /* Adjust the size of the image */
+    background-repeat: no-repeat;
+    width: 80px; /* Width of the image */
+    height: 80px; /* Height of the image */
+    position: absolute;
+    top: 10px; /* Position it within the top of the form */
+    z-index: 1; /* Keeps the images behind the form's content */
+  }
+  
+  .contact-form-container::before {
+    left: 10px; /* Position in the top-left corner of the form */
+  }
+  
+  .contact-form-container::after {
+    right: 10px; /* Position in the top-right corner of the form */
+  }
+  
+  .contact-form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Serif', serif;
+    letter-spacing: 1px;
+  }
+  
+  .contact-form-container form div {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .contact-form-container input,
+  .contact-form-container textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+    margin: 0 auto;
+    display: block;
+    z-index: 2; /* Ensure inputs are above the images */
+  }
+  
+  .contact-form-container button {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Serif', serif;
+    margin: 20px auto 0 auto;
+    display: block;
+  }
+  
