@@ -95,26 +95,24 @@ const Register = ({ setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError(""); // Reset any previous errors
 
     try {
       const result = await createNewUser(username, email, password);
 
-      if (result && result.token) {
+      if (result && !result.error) {
         const userData = { username, email };
         localStorage.setItem("token", result.token);
         localStorage.setItem("user", JSON.stringify(userData));
 
-        setUser(userData);
+        setUser(userData); // Update user state
 
-        navigate("/profile");
+        navigate("/profile"); // Redirect to the profile page
+      } else {
+        setError(result.error || "Registration failed. Please try again.");
       }
     } catch (error) {
-      if (error.response && error.response.status === 409) {
-        setError("User already exists with this email or username");
-      } else {
-        setError("Registration failed. Please try again.");
-      }
+      setError("Oops, something went wrong during registration!");
     }
   };
 
