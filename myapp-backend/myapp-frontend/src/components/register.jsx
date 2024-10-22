@@ -83,7 +83,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types"; // Import PropTypes
-import { createNewUser } from "../API";
+// import { createNewUser } from "../API";
 
 const Register = ({ setUser }) => {
   const [username, setUsername] = useState("");
