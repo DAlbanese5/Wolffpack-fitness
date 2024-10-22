@@ -106,6 +106,7 @@ const Login = ({ setUser }) => {
           <input
             type="email"
             placeholder="Email"
+            className="emailbar"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -114,6 +115,7 @@ const Login = ({ setUser }) => {
           <input
             type="password"
             placeholder="Password"
+            className="passwordbar"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

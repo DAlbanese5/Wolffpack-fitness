@@ -185,3 +185,18 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease-in-out; 
 }
+
+
+.workoutcontainer{
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.AboutCoachContainer{
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.AboutCoachContainer p {
+  font-size: 24px;
+}
