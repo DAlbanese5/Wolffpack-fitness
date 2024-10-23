@@ -1,72 +1,10 @@
-.AboutCoachContainer {
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 40px;
-  max-width: 800px;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  text-align: center;
+.homelogo {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-top: -13%;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 1.75rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.profile {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image is fully displayed within the container */
-  margin: 20px auto; /* Centers the image and adds space around it */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
-  border: 3px solid #f15025; /* Optional: border matching your site's color scheme */
-}
-
-p {
-  font-size: 1rem;
-  color: #666;
-  text-align: justify; /* Justify text for better readability */
-  margin-top: 20px;
-}
-
-p span {
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .AboutCoachContainer {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  .profile {
-    width: 150px; /* Adjust the image size on smaller screens */
-    height: 150px;
-  }
-}
-
-/* Navbar */
 .navbar {
   position: fixed;
   left: 0;
@@ -108,18 +46,18 @@ p span {
   transform: scale(0.98);
 }
 
-/* Cart Button */
+/* Styling for the Cart button */
 .cart-button {
   box-shadow: 2px 2px 3px black;
   position: fixed;
   right: 0;
-  top: 5%;
+  top: 5%; /* Adjusts the vertical position to be in the middle of the screen */
   transform: translateY(-10%);
   background-color: #f15025;
   color: #ffffff;
   border: none;
   padding: 12px 40px;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -140,26 +78,117 @@ p span {
   transform: scale(0.98);
 }
 
-/* Other buttons */
-.Login-button,
-.Submit-button,
-.submit-button {
+/*About me page styling*/
+.AboutCoachContainer {
+  text-align: center;
+  border: 3px solid black;
+  background-color: rgba(128, 128, 128, 0.431);
+}
+
+/*Workout page styling*/
+.workoutcontainer {
+  flex: auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#glutepic {
+  width: 300px;
+  height: 300px;
+  flex: auto;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+#ebook2pic {
+  width: 300px;
+  height: 300px;
+  flex: auto;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.eBook1 {
+  background-color: #d9431e;
+  border: 3px solid black;
+}
+
+.eBook2 {
+  background-color: #d9431e;
+  border: 3px solid black;
+}
+
+.ebooktitles {
+  background-color: aquamarine;
+  border: 3px solid black;
+}
+
+.Login-button {
   box-shadow: 2px 2px 3px black;
   position: fixed;
-  top: 10%;
+  right: 0;
+  top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
   transform: translateY(-10%);
   background-color: #f15025;
   color: #ffffff;
   border: none;
   padding: 12px 40px;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease-in-out;
 }
 
-/* General Product Page Styling */
+.Submit-button {
+  box-shadow: 2px 2px 3px black;
+  position: fixed;
+  flex: auto;
+  flex-wrap: wrap;
+  top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+  transform: translateY(-10%);
+  background-color: #f15025;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the right side */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+.login {
+  flex: auto;
+  flex-direction: column;
+  text-align: center;
+}
+
+.submit-button {
+  box-shadow: 2px 2px 3px black;
+  position: fixed;
+  flex: auto;
+  flex-wrap: wrap;
+  top: 10%; /* Adjusts the vertical position to be in the middle of the screen */
+  transform: translateY(-10%);
+  background-color: #f15025;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 20px; /*Rounded corners on the right side;*/
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+/*Register Page info*/
+
+.register-form {
+  color: aqua;
+}
+
+/* General Styling */
 .product-page-container {
   width: 80%;
   margin: 50px auto;
@@ -198,7 +227,6 @@ p span {
   transform: scale(1.05);
 }
 
-/* Image and Info Styling */
 .product-image {
   width: 100%;
   height: 150px;
@@ -242,16 +270,111 @@ p span {
   background-color: #218838;
 }
 
-/* Navbar Right */
+/* Cart Section */
+.cart-container {
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+  margin-top: 50px;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item-info {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  font-size: 14px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  background-color: #ddd;
+  border: none;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.quantity-controls button:hover {
+  background-color: #ccc;
+}
+
+.quantity {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Remove Button */
+.remove-from-cart-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: #c82333;
+}
+
+/* Total Price Styling */
+.cart-total {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 30px;
+}
+
 .navbar2 {
   position: fixed;
-  right: 0;
+  right: 0; /* Align to the right */
   top: 0;
   height: 100vh;
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Start buttons from the top */
 }
 
 .navbar2 button {
@@ -262,7 +385,7 @@ p span {
   border: none;
   padding: 12px 40px;
   margin: 40px 0;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px; /* Rounded corners for the left side */
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -283,91 +406,85 @@ p span {
   background-color: #b13315;
   transform: scale(0.98);
 }
-/* workouts page */
-.workoutcontainer {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  font-family: "Arial", sans-serif;
-}
 
-.ebooktitles {
-  font-size: 1.75rem;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
+/* contact form page */
 
-#glutepic,
-#ebook2pic {
-  width: 300px;
-  height: 300px;
-  object-fit: cover; /* Ensures the image fits within the container */
-  margin: 20px auto;
-  display: block;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px; /* Adds rounded corners to the images */
-}
-
-.eBook1,
-.eBook2 {
-  background-color: #f15025;
+.contact-form-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
   border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
-  color: white;
+  background: #ffffff;
+  position: relative; /* This ensures the ::before and ::after are positioned relative to this container */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container::before,
+.contact-form-container::after {
+  content: "";
+  background-image: url("/images/wolffpakimg.jpg"); /* Path to your image */
+  background-size: 80px; /* Adjust the size of the image */
+  background-repeat: no-repeat;
+  width: 80px; /* Width of the image */
+  height: 80px; /* Height of the image */
+  position: absolute;
+  top: 10px; /* Position it within the top of the form */
+  z-index: 1; /* Keeps the images behind the form's content */
+}
+
+.contact-form-container::before {
+  left: 10px; /* Position in the top-left corner of the form */
+}
+
+.contact-form-container::after {
+  right: 10px; /* Position in the top-right corner of the form */
+}
+
+.contact-form-container h2 {
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  font-family: "Serif", serif;
+  letter-spacing: 1px;
 }
 
-.eBook1 a,
-.eBook2 a {
-  font-size: 1.25rem;
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
+.contact-form-container form div {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+  margin: 0 auto;
   display: block;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
+  z-index: 2; /* Ensure inputs are above the images */
 }
 
-.eBook1 a:hover,
-.eBook2 a:hover {
-  color: #dddddd; /* Slightly lighter color on hover */
-}
-
-.eBook1 p,
-.eBook2 p {
-  font-size: 1rem;
-  color: white;
-  margin-top: 10px;
-  text-align: justify;
-}
-
-@media (max-width: 768px) {
-  #glutepic,
-  #ebook2pic {
-    width: 100%; /* Make the images responsive */
-    height: auto;
-  }
-
-  .workoutcontainer {
-    padding: 10px;
-  }
-
-  .ebooktitles {
-    font-size: 1.5rem;
-  }
-
-  .eBook1 a,
-  .eBook2 a {
-    font-size: 1.1rem;
-  }
-
-  .eBook1 p,
-  .eBook2 p {
-    font-size: 0.9rem;
-  }
+.contact-form-container button {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Serif", serif;
+  margin: 20px auto 0 auto;
+  display: block;
 }
