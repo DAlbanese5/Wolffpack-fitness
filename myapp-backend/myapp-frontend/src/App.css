@@ -283,3 +283,91 @@ p span {
   background-color: #b13315;
   transform: scale(0.98);
 }
+/* workouts page */
+.workoutcontainer {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.ebooktitles {
+  font-size: 1.75rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#glutepic,
+#ebook2pic {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* Ensures the image fits within the container */
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Adds rounded corners to the images */
+}
+
+.eBook1,
+.eBook2 {
+  background-color: #f15025;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eBook1 a,
+.eBook2 a {
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.eBook1 a:hover,
+.eBook2 a:hover {
+  color: #dddddd; /* Slightly lighter color on hover */
+}
+
+.eBook1 p,
+.eBook2 p {
+  font-size: 1rem;
+  color: white;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  #glutepic,
+  #ebook2pic {
+    width: 100%; /* Make the images responsive */
+    height: auto;
+  }
+
+  .workoutcontainer {
+    padding: 10px;
+  }
+
+  .ebooktitles {
+    font-size: 1.5rem;
+  }
+
+  .eBook1 a,
+  .eBook2 a {
+    font-size: 1.1rem;
+  }
+
+  .eBook1 p,
+  .eBook2 p {
+    font-size: 0.9rem;
+  }
+}
