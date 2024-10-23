@@ -29,7 +29,6 @@
 
 // export default App;
 
-
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/Navbar";
@@ -40,6 +39,9 @@ import Products from "./components/products";
 import ContactMe from "./components/contactMe";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
+import Register from "./components/register";
+import Profile from "./components/Profile";
+
 import "./App.css";
 
 function App() {
@@ -56,6 +58,9 @@ function App() {
         <Route path="/contact" element={<ContactMe />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser} />} />
+        <Route path="/register" element={<Register setUser={setUser} />} />
+        <Route path="/profile" element={<Profile setUser={setUser} />} />
+
         {/* Add more routes here as needed */}
         <Route path="/" element={<Home />} />
       </Routes>
