@@ -1,5 +1,3 @@
-const API_URL = "http://localhost:5000/api";
-
 const createNewUser = async (username, email, password) => {
   try {
     const response = await fetch("http://localhost:5000/auth/register", {
