@@ -1,71 +1,64 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // If you are using react-router-dom for navigation
+import { useNavigate, Link } from "react-router-dom"; // Import Link here
+import { loginUser } from "../API";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await loginUser(email, password);
+      if (response && response.token) {
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("user", JSON.stringify(response.user));
 
-      const result = await response.json();
-
-      if (response.ok && result.token) {
-        const userData = { email };
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("user", JSON.stringify(userData));
-
-        setUser(userData);
+        setUser({ email });
 
         navigate("/profile");
       } else {
-        setError(
-          result.message || "Login failed. Please check your credentials."
-        );
+        setError("Invalid login credentials");
       }
     } catch (err) {
-      setError("Oops, something went wrong. Please try again later.");
+      console.error("Login failed: ", err);
+      setError("Something went wrong, please try again.");
     }
   };
 
   return (
     <div className="login">
-      <h2>Login to Your Account</h2>
-      {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit}>
+      <br />
+      <h2>Login</h2>
+      {error && <p>{error}</p>}
+      <form className="register-form" onSubmit={handleSubmit}>
         <label>
           <input
-            placeholder="Email"
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
           />
         </label>
         <label>
           <input
-            placeholder="Password"
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
           />
         </label>
-        <button type="submit">Login</button>
+        <button className="submit-button" type="submit">
+          Submit
+        </button>
       </form>
+      <p className="register-link">
+        Not a part of the Pak? <Link to="/register">Register here</Link>
+      </p>
     </div>
   );
 };

@@ -22,9 +22,9 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar2">
-        {/* <Link to="/Logout" onClick={handleLogout} style={{ marginLeft: "auto" }}>
-        Logout
-      </Link> */}
+        <Link to="/Logout">
+          <button>Logout</button>
+        </Link>
         <Link to="/Login">
           <button>Login</button>
         </Link>
