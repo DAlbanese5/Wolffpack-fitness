@@ -1,3 +1,4 @@
+
 .AboutCoachContainer {
   background-color: #f5f5f5;
   border-radius: 10px;
@@ -37,6 +38,15 @@ p {
   color: #666;
   text-align: justify; /* Justify text for better readability */
   margin-top: 20px;
+
+
+.homelogo {
+  width: 60%;
+  display: block;  
+  margin: 0 auto;  
+  margin-top: -13%;
+
+
 }
 
 p span {
