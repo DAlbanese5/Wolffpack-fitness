@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const bcrypt = require("bcrypt"); // Import bcrypt for password hashing
@@ -27,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 // POST (create) a new user at /api/auth/register
-app.post("/api/auth/register", async (req, res, next) => {
+app.post("/auth/register", async (req, res, next) => {
   const { username, email, password, bio, isAdmin = false } = req.body;
 
   try {
@@ -70,4 +71,5 @@ app.post("/api/auth/register", async (req, res, next) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  console.log(process.env.DATABASE_URL);
 });
