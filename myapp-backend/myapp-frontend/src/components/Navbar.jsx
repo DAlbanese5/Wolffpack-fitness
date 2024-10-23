@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link to="/">
           <button>Home</button>
         </Link>
-        <Link to="/products">
+        <Link to="/product">
           <button>Product</button>
         </Link>
         <Link to="/workouts">
@@ -17,10 +17,10 @@ const Navbar = () => {
 
         <Link to="/about">
           <button>Meet Coach</button>
+        </Link>
 
         <Link to="/aboutMe">
           <button>About Me</button>
-
         </Link>
         <Link to="/contact">
           <button>Contact</button>
@@ -32,10 +32,9 @@ const Navbar = () => {
         >
           Logout
         </Link> */}
-        <Link to="/Login"> 
-        <button>Login</button>
+        <Link to="/Login">
+          <button>Login</button>
         </Link>
-       
       </div>
       <button className="cart-button">Cart</button>{" "}
       {/* Cart button on the right */}
