@@ -21,12 +21,6 @@ const generateToken = (user) => {
   });
 };
 
-// Test route
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
-// POST (create) a new user at /api/auth/register
 app.post("/api/auth/register", async (req, res, next) => {
   const { username, email, password, bio, isAdmin = false } = req.body;
 
@@ -63,7 +57,8 @@ app.post("/api/auth/register", async (req, res, next) => {
 
     res.status(201).json({ message: "User registered successfully", token });
   } catch (err) {
-    next(err);
+    console.error("Error during registration:", err); // Add this line to log the error
+    res.status(500).json({ message: "Internal server error." });
   }
 });
 

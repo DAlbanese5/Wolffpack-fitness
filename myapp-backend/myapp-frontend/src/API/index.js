@@ -1,24 +1,23 @@
-const API_URL = "http://localhost:3000/api";
+const API_URL = "http://localhost:5000/api";
 
-// Register a new user
-export async function createNewUser(username, email, password) {
+const createNewUser = async (username, email, password) => {
   try {
-    const response = await fetch(`${API_URL}/auth/register`, {
+    const response = await fetch("http://localhost:5000/auth/register", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ username, email, password }),
     });
 
-    const json = await response.json();
-    if (response.ok) {
-      localStorage.setItem("token", json.token); // Store the token
-      return json;
-    } else {
-      console.error("Registration failed:", json.message);
-      return { error: json.message };
+    if (!response.ok) {
+      throw new Error("Server error");
     }
-  } catch (err) {
-    console.error("Oops, something went wrong during registration!", err);
-    throw err;
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return { error: error.message };
   }
-}
+};
+export default createNewUser;

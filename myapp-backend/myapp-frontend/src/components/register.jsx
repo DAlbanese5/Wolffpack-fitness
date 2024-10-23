@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types"; // Import PropTypes
-// import { createNewUser } from "../API";
+import createNewUser from "../API";
 
 const Register = ({ setUser }) => {
   const [username, setUsername] = useState("");
@@ -17,6 +17,7 @@ const Register = ({ setUser }) => {
 
     try {
       const result = await createNewUser(username, email, password);
+      console.log(result); // Log the result to debug the API response
 
       if (result && !result.error) {
         const userData = { username, email };
