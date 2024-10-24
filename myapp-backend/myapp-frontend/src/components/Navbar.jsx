@@ -14,17 +14,24 @@ const Navbar = () => {
         <Link to="/workouts">
           <button>Workouts</button>
         </Link>
+
         <Link to="/about">
           <button>Meet Coach</button>
+        </Link>
+
+        <Link to="/aboutMe">
+          <button>About Me</button>
         </Link>
         <Link to="/contact">
           <button>Contact</button>
         </Link>
+
       </div>
       <div className="navbar2">
         <Link to="/Logout">
           <button>Logout</button>
         </Link>
+
         <Link to="/Login">
           <button>Login</button>
         </Link>
