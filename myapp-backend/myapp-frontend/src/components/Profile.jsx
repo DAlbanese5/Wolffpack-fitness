@@ -4,28 +4,21 @@ import PropTypes from "prop-types";
 import axios from "axios";
 
 function Profile({ user }) {
-  const [workoutSchedule, setWorkoutSchedule] = useState([]); // Initialize as empty array
+  const [workoutSchedule, setWorkoutSchedule] = useState([]);
   const [message, setMessage] = useState("");
   const [trainerResponse, setTrainerResponse] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
-      console.log("No user found, redirecting to login"); // Debugging log
-      navigate("/login");
+      navigate("/login"); // Redirect to login if user is not logged in
       return;
     }
-
-    // Log user data to confirm it’s received
-    console.log("User data in Profile:", user);
 
     // Fetch user's workout schedule from the API
     const fetchWorkoutSchedule = async () => {
       try {
         const response = await axios.get(`/api/workouts/user/${user.id}`);
-        console.log("Workout schedule response:", response.data); // Debugging log
-
-        // Check if response data is an array, set to empty array if not
         setWorkoutSchedule(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.error("Error fetching workout schedule:", error);
@@ -41,6 +34,7 @@ function Profile({ user }) {
         userId: user.id,
         workoutId: workoutId,
       });
+      // Update the local state to reflect the change
       setWorkoutSchedule((prev) =>
         prev.map((workout) =>
           workout.id === workoutId ? { ...workout, completed: true } : workout
@@ -64,8 +58,6 @@ function Profile({ user }) {
       console.error("Error sending message:", error);
     }
   };
-
-  if (!user) return <div>Loading...</div>;
 
   return (
     <div className="profile">
