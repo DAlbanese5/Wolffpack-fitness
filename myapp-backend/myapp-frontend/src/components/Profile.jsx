@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 
 function Profile({ user }) {
-  const [workoutSchedule, setWorkoutSchedule] = useState([]);
+  const [workoutSchedule, setWorkoutSchedule] = useState([]); // Initialize as empty array
   const [message, setMessage] = useState("");
   const [trainerResponse, setTrainerResponse] = useState(null);
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ function Profile({ user }) {
   useEffect(() => {
     if (!user) {
       console.log("No user found, redirecting to login"); // Debugging log
-      navigate("/login"); // Redirect to login if user is not logged in
+      navigate("/login");
       return;
     }
 
@@ -23,7 +23,10 @@ function Profile({ user }) {
     const fetchWorkoutSchedule = async () => {
       try {
         const response = await axios.get(`/api/workouts/user/${user.id}`);
-        setWorkoutSchedule(response.data);
+        console.log("Workout schedule response:", response.data); // Debugging log
+
+        // Check if response data is an array, set to empty array if not
+        setWorkoutSchedule(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.error("Error fetching workout schedule:", error);
       }
@@ -78,20 +81,24 @@ function Profile({ user }) {
 
       <div className="workout-schedule">
         <h3>Your Workout Schedule for the Week</h3>
-        <ul>
-          {workoutSchedule.map((workout) => (
-            <li key={workout.id}>
-              {workout.name} - {workout.difficulty}
-              {workout.completed ? (
-                <span className="completed">Completed</span>
-              ) : (
-                <button onClick={() => handleMarkCompleted(workout.id)}>
-                  Mark as Completed
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
+        {Array.isArray(workoutSchedule) && workoutSchedule.length > 0 ? (
+          <ul>
+            {workoutSchedule.map((workout) => (
+              <li key={workout.id}>
+                {workout.name} - {workout.difficulty}
+                {workout.completed ? (
+                  <span className="completed">Completed</span>
+                ) : (
+                  <button onClick={() => handleMarkCompleted(workout.id)}>
+                    Mark as Completed
+                  </button>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No workouts scheduled for this week.</p>
+        )}
       </div>
 
       <div className="message-trainer">

@@ -488,3 +488,152 @@
   margin: 20px auto 0 auto;
   display: block;
 }
+
+/* Profile Container Styling */
+.profile {
+  width: 70%;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.profile h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #f15025;
+  margin-bottom: 20px;
+}
+
+/* Profile Info Section */
+.profile-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-info .profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Workout Schedule Styling */
+.workout-schedule {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.workout-schedule h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.workout-schedule ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workout-schedule li {
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.workout-schedule .completed {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.workout-schedule button {
+  background-color: #f15025;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.workout-schedule button:hover {
+  background-color: #d9431e;
+}
+
+/* Trainer Message Section */
+.message-trainer {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.message-trainer h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.message-trainer textarea {
+  width: 90%;
+  max-width: 500px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: none;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.message-trainer button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.message-trainer button:hover {
+  background-color: #0056b3;
+}
+
+.message-trainer p {
+  font-size: 16px;
+  color: #28a745;
+  text-align: center;
+  margin-top: 10px;
+}
