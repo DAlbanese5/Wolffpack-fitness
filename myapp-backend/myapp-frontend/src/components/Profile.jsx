@@ -1,37 +1,120 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import axios from "axios";
 
-const Profile = () => {
-  const [profileInfo, setProfileInfo] = useState(null);
+function Profile({ user }) {
+  const [workoutSchedule, setWorkoutSchedule] = useState([]);
+  const [message, setMessage] = useState("");
+  const [trainerResponse, setTrainerResponse] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const userData = localStorage.getItem("user");
-
-    if (userData && userData !== "undefined") {
-      try {
-        const parsedData = JSON.parse(userData);
-        setProfileInfo(parsedData);
-      } catch (error) {
-        console.error("Error parsing JSON:", error);
-        localStorage.removeItem("user");
-        navigate("/login");
-      }
-    } else {
-      navigate("/login");
+    if (!user) {
+      console.log("No user found, redirecting to login"); // Debugging log
+      navigate("/login"); // Redirect to login if user is not logged in
+      return;
     }
-  }, [navigate]);
 
-  if (!profileInfo) {
-    return <div>Loading...</div>;
-  }
+    // Log user data to confirm it’s received
+    console.log("User data in Profile:", user);
+
+    // Fetch user's workout schedule from the API
+    const fetchWorkoutSchedule = async () => {
+      try {
+        const response = await axios.get(`/api/workouts/user/${user.id}`);
+        setWorkoutSchedule(response.data);
+      } catch (error) {
+        console.error("Error fetching workout schedule:", error);
+      }
+    };
+
+    fetchWorkoutSchedule();
+  }, [user, navigate]);
+
+  const handleMarkCompleted = async (workoutId) => {
+    try {
+      await axios.post(`/api/workouts/mark-completed`, {
+        userId: user.id,
+        workoutId: workoutId,
+      });
+      setWorkoutSchedule((prev) =>
+        prev.map((workout) =>
+          workout.id === workoutId ? { ...workout, completed: true } : workout
+        )
+      );
+    } catch (error) {
+      console.error("Error marking workout as completed:", error);
+    }
+  };
+
+  const handleSendMessage = async () => {
+    try {
+      await axios.post("/api/messages/send", {
+        fromUserId: user.id,
+        toUserId: 1, // Assuming the trainer has a user ID of 1
+        content: message,
+      });
+      setTrainerResponse("Message sent successfully!");
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
+
+  if (!user) return <div>Loading...</div>;
 
   return (
-    <div className="profile-container">
-      <h1>WELCOME TO YOUR PROFILE</h1>
-      {/* Additional profile data can be rendered here */}
+    <div className="profile">
+      <h2>{user.username}'s Profile</h2>
+      <div className="profile-info">
+        <img
+          src={user.profilePicture}
+          alt="Profile"
+          className="profile-picture"
+        />
+        <p>{user.bio}</p>
+      </div>
+
+      <div className="workout-schedule">
+        <h3>Your Workout Schedule for the Week</h3>
+        <ul>
+          {workoutSchedule.map((workout) => (
+            <li key={workout.id}>
+              {workout.name} - {workout.difficulty}
+              {workout.completed ? (
+                <span className="completed">Completed</span>
+              ) : (
+                <button onClick={() => handleMarkCompleted(workout.id)}>
+                  Mark as Completed
+                </button>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="message-trainer">
+        <h3>Send a Message to Your Trainer</h3>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Write your message here..."
+        ></textarea>
+        <button onClick={handleSendMessage}>Send Message</button>
+        {trainerResponse && <p>{trainerResponse}</p>}
+      </div>
     </div>
   );
+}
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    profilePicture: PropTypes.string,
+    bio: PropTypes.string,
+  }).isRequired,
 };
 
 export default Profile;

@@ -21,7 +21,6 @@ const createNewUser = async (username, email, password) => {
 };
 
 export default createNewUser;
-
 export const loginUser = async (email, password) => {
   try {
     const response = await fetch("http://localhost:5000/api/auth/login", {
@@ -33,13 +32,18 @@ export const loginUser = async (email, password) => {
     });
 
     if (!response.ok) {
+      // Log the response for more insight into the error
+      const errorText = await response.text();
+      console.error("Response not OK:", errorText);
       throw new Error("Invalid login credentials");
     }
 
     const data = await response.json();
+    console.log("Data received from login:", data); // Debugging log
+
     return data;
   } catch (error) {
     console.error("Error logging in:", error);
-    throw error;
+    return { error: error.message }; // Return an error object instead of throwing
   }
 };

@@ -92,7 +92,15 @@ app.post("/api/auth/login", async (req, res) => {
       }
     );
 
-    res.status(200).json({ token, message: "Login successful" });
+    // Respond with both the token and user data
+    const { id, username, bio, isAdmin } = user; // Extract necessary fields
+    res
+      .status(200)
+      .json({
+        token,
+        user: { id, username, email, bio, isAdmin },
+        message: "Login successful",
+      });
   } catch (err) {
     console.error("Error during login:", err); // Log the error
     res.status(500).json({ message: "Internal server error." });

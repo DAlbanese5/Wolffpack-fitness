@@ -17,6 +17,7 @@ const Login = ({ setUser }) => {
 
     try {
       const response = await loginUser(email, password);
+      console.log("Response from loginUser:", response); // Debugging log
 
       if (response && response.token && response.user) {
         localStorage.setItem("token", response.token);
@@ -24,7 +25,7 @@ const Login = ({ setUser }) => {
         setUser(response.user);
         navigate("/profile");
       } else {
-        setError("Invalid login credentials");
+        setError(response.error || "Invalid login credentials");
       }
     } catch (err) {
       console.error("Login failed:", err);
