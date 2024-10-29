@@ -41,6 +41,7 @@ import ContactMe from "./components/contactMe";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Register from "./components/register";
+import Profile from "./components/profile";
 import "./App.css";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route path="/workouts" element={<Workouts />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<ContactMe />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />

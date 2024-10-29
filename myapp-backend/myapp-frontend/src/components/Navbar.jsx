@@ -28,6 +28,9 @@ const Navbar = () => {
         <Link to="/Login">
           <button>Login</button>
         </Link>
+        <Link to="/profile">
+        <button>Profile</button>
+        </Link>
       </div>
     </>
   );
